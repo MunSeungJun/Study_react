@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
-import Content from "./components/Content";
-import Footer from "./components/Footer";
-import Input from "./components/Input";
+import Title from "./components/Title";
+import "./App.css"
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -21,10 +20,8 @@ const App = () => {
 
   return (
     <>
-      <Footer />
-      <Input />
       <Header count={todos.length} />
-      <Content todos={todos} />
+      <Title />
     </>
   );
 };
