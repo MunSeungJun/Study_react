@@ -1,0 +1,59 @@
+:root{
+    --primary-bg-color: rgb(246, 231, 238)
+}
+
+.d-flex{
+    display: flex;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.justify-content-around{
+    justify-content: space-around;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.gap-1{
+    gap: 0.25rem;
+}
+.gap-2{
+    gap: 0.5rem;
+}
+.gap-3{
+    gap: 1rem;
+}
+.gap-4{
+    gap: 1.5rem;
+}
+.gap-5{
+    gap: 2rem;
+}
+.flex-1{
+    flex: 1;
+}
+
+#input_form{
+    background-color: var(--primary-bg-color);
+}
+#input_form fieldset{
+    padding: 1rem;
+    border: none;
+}
+[type="text"]{
+    padding: .5rem;
+    border: none;
+    outline: none;
+    border-radius: .75rem;
+    text-indent: .5rem;
+}
+.btn{
+    border: 0;
+    color: white;
+    background:repeating-linear-gradient(to top left, rgb(255, 136, 157), rgb(255,148, 148), rgb(255, 153, 148) );
+    border-radius: .5rem;
+    padding: 0.25rem;
+}
