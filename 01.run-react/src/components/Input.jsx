@@ -1,22 +1,12 @@
-import React, { useState } from "react";
+import React from 'react'
 
-const Input = () => {
-  const [todo, setTodo] = useState([]);
-  function addTodo(e) {
-    setTodo()
-  }
+const Input = ({handleSubmit, onChangeInput, todoTitle}) => {
   return (
-    <>
-      <input
-        type="text"
-        value={todo}
-        onChange={(e) => {
-          setTodo(e.target.value);
-        }}
-      />
-      <input type="submit" value="추가" />
-    </>
-  );
-};
+    <form onSubmit={handleSubmit} className='d-flex justify-content-between gap-3'>
+        <input type="text" value={todoTitle} onChange={onChangeInput} className='flex-1' placeholder='추가할 할 일을 입력하세요' />
+        <input type="submit" value="추가" />
+      </form>
+  )
+}
 
-export default Input;
+export default Input
