@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react'
 
-const Header = (props) => {
-  const {count} = props
+const Header = ({count}) => {
   return (
-    <header>
-      <h1>
-        <a href="/">{count}</a>
-      </h1>
-    </header>
-  );
-};
+    <>
+      <h1>Todo List (<span>{count}</span>)</h1>
+      <h2>오늘의 할 일</h2>
+    </>
+  )
+}
 
-export default Header;
+export default Header
