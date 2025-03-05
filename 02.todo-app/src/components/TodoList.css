@@ -1,0 +1,41 @@
+.item {
+    background-color: white;
+    border-radius: 1rem;
+    padding: .5rem;
+}
+.item-header{
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+}
+.item-body {
+    margin-bottom: .5rem;
+    padding: 0.5rem;
+    margin-left: .5rem;
+}
+.item-footer {
+    margin-left: 1rem;
+}
+.text-secondary{
+    color: #aaaaaa;
+}
+.fs-3{
+    font-size: 1rem;
+}
+.fs-2{
+    font-size: 0.75rem;
+}
+.fs-1{
+    font-size: .5rem;
+}
+.cat-etc{
+    border-left: 5px solid lightsalmon;
+}
+.cat-meet{
+    border-left: 5px solid skyblue;
+}
+.cat-free{
+    border-left: 5px solid lightgreen;
+}
+.cat-travel{
+    border-left: 5px solid lightpink;
+}
