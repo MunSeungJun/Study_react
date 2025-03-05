@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import TodoHeader from "./components/TodoHeader";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
@@ -6,55 +6,61 @@ import "./App.css";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
-  const [inputId, setInputId] = useState(1);
-  const [todoTitle, setTodoTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [id, setId] = useState(1);
+  const [formData, setFormData] = useState({
+    category: '',
+    color: '',
+    title: "",
+    desc: "",
+    start: "",
+    end: "",
+  });
+  const btnRef = useRef([])
+  const colorRef = useRef([])
 
-  function onTitleChange(t) {
-    setTodoTitle(t);
-  }
-  function onDescriptionChange(d) {
-    setDescription(d);
-  }
-  function onStartChange(start) {
-    setStartDate(start);
-  }
-  function onEndChange(end) {
-    setEndDate(end);
-    console.log(endDate);
-  }
   function handleSubmit(e) {
     e.preventDefault();
     setTodos((prev) => {
-      return [
-        ...prev,
-        { idx: inputId, title: todoTitle, start: startDate, end: endDate },
-      ];
+      return [...prev, { ...formData, idx: id }];
     });
-    setInputId((i) => i + 1);
-    setTodoTitle("");
-    setDescription("");
-    setStartDate("");
-    setEndDate("");
+    setId((i) => i + 1);
+    setFormData({
+      category:'',
+      color: '',
+      title: "",
+      desc: "",
+      start: "",
+      end: "",
+    });
+    btnRef.current.forEach(v => v.classList.remove('btn-color'))
+  }
+  function onChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => {
+      return { ...prev, [name]: value };
+    });
+  }
+  function onClick(e) {
+    e.target.classList.toggle("btn-color")
+    if(e.target.classList.contains('btn-color') == true){
+      setFormData((prev) => {
+        return { ...prev, ['category']: e.target.innerText, ['color']: e.target.dataset.color };
+      });
+    }
+
   }
 
   return (
     <>
       <TodoHeader />
       <TodoInput
-        title={todoTitle}
-        description={description}
-        startDate={startDate}
-        endDate={endDate}
-        onTitleChange={onTitleChange}
-        onDescriptionChange={onDescriptionChange}
-        onStartChange={onStartChange}
-        onEndChange={onEndChange}
+        formData={formData}
+        btnRef={btnRef}
+        onChange={onChange}
+        onClick={onClick}
         handleSubmit={handleSubmit}
       />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} colorRef={colorRef} />
     </>
   );
 };
