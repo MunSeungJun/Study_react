@@ -1,7 +1,7 @@
 import React from "react";
 
 const TodoHeader = () => {
-  return <h1>Create New Todo</h1>;
+  return <h1 className="text-center">Create New Todo</h1>;
 };
 
 export default TodoHeader;
