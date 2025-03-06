@@ -16,7 +16,6 @@ const App = () => {
     end: "",
   });
   const btnRef = useRef([])
-  const colorRef = useRef([])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,7 +31,7 @@ const App = () => {
       start: "",
       end: "",
     });
-    btnRef.current.forEach(v => v.classList.remove('btn-color'))
+    // btnRef.current.forEach(v => v.classList.remove('btn-active'))
   }
   function onChange(e) {
     const { name, value } = e.target;
@@ -41,13 +40,15 @@ const App = () => {
     });
   }
   function onClick(e) {
-    e.target.classList.toggle("btn-color")
-    if(e.target.classList.contains('btn-color') == true){
-      setFormData((prev) => {
-        return { ...prev, ['category']: e.target.innerText, ['color']: e.target.dataset.color };
-      });
-    }
-
+    // e.target.classList.toggle("btn-active")
+    // if(e.target.classList.contains('btn-active') == true){
+    // }
+    setFormData((prev) => {
+      return { ...prev, ['category']: e.target.innerText, ['color']: e.target.dataset.color };
+    });
+  }
+  function onDelete(todoId) {
+    setTodos(prev => prev.filter(v => v.idx !== todoId) )
   }
 
   return (
@@ -60,7 +61,7 @@ const App = () => {
         onClick={onClick}
         handleSubmit={handleSubmit}
       />
-      <TodoList todos={todos} colorRef={colorRef} />
+      <TodoList todos={todos} onDelete={onDelete} />
     </>
   );
 };
