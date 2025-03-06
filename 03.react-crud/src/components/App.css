@@ -1,0 +1,13 @@
+ul{
+    list-style: none;
+    padding: 0;
+}
+fieldset{
+    border: none;
+}
+legend{
+    display: none;
+}
+.d-none{
+    display: none;
+}
