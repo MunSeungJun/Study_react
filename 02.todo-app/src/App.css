@@ -1,4 +1,6 @@
-
+.text-center{
+    text-align: center;
+}
 
 .d-flex{
     display: flex;
@@ -8,6 +10,12 @@
 }
 .justify-content-around{
     justify-content: space-around;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.align-items-center{
+    align-items: center;
 }
 .flex-column{
     flex-direction: column;
@@ -71,7 +79,7 @@
     border-radius: .5rem;
     padding: 0.25rem;
 }
-.btn-color{
+.btn-active{
     background:repeating-linear-gradient(to top left, rgb(255, 136, 157), rgb(255,148, 148), rgb(255, 153, 148) );
     color: white;
 }
