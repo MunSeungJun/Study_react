@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Article = () => {
+const Article = ({select, mode}) => {
   return (
     <>
-      <h1>Welcome</h1>
-      <p>Hello, web</p>
+      <h1>{mode}</h1>
+      <p>{select.body}</p>
     </>
   );
 };
