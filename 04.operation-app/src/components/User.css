@@ -1,0 +1,19 @@
+
+.user-img{
+    border-radius: 5rem;
+    overflow: hidden;
+}
+.img-fluid{
+    max-width: 100%;
+}
+.user-info{
+    text-align: center;
+}
+.user-name{
+    font-size: 0.75rem;
+    margin: 0;
+}
+.user-account{
+    font-size: 0.75rem;
+    margin: 0;
+}
