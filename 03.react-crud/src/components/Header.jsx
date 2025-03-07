@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Header = ({title}) => {
+const Header = ({title, onChangeMode}) => {
   return (
-    <h1>{title}</h1>
+    <h1><a href="/" onClick={onChangeMode} data-mode='Welcome'>{title}</a></h1>
   )
 }
 
