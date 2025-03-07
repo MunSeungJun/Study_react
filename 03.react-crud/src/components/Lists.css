@@ -1,7 +1,0 @@
-.item{
-    border: 1px solid black;
-}
-.item-body{
-    display: flex;
-    justify-content: space-between;
-}
