@@ -1,10 +1,10 @@
 import React from 'react';
-import './Contents.css'
+import './Create.css'
 
-const Contents = ({formData, onSubmit, onChange}) => {
+const Create = ({formData, onCreate, onChange}) => {
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onCreate}>
         <fieldset>
           <legend></legend>
           <div>
@@ -22,4 +22,4 @@ const Contents = ({formData, onSubmit, onChange}) => {
   );
 };
 
-export default Contents;
+export default Create;
