@@ -4,3 +4,6 @@
 ul, li{
     list-style: none;
 }
+.d-none{
+    display: none;
+}
