@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        crud operation
+        <h1>crud operation</h1>
         <User />
         <Nav />
         <Sign />

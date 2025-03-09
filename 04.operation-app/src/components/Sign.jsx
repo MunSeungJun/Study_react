@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { BoxArrowRight } from 'react-bootstrap-icons';
+import './Sign.css';
 
 const Sign = () => {
   return (
-    <div>Sign</div>
-  )
-}
+    <div className='sign'>
+      <button className="logout-btn">
+        Logout{' '}
+        <span>
+          <BoxArrowRight />
+        </span>
+      </button>
+    </div>
+  );
+};
 
-export default Sign
+export default Sign;

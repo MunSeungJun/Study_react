@@ -1,4 +1,19 @@
 .nav{
     display: flex;
     flex-direction: column;
+    gap: .5rem;
+    width: 75%;
+    margin: 0 auto;
+}
+.nav a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .25rem;
+    justify-content: center;
+}
+.nav a:hover{
+    background-color: orange;
 }
