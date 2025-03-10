@@ -1,17 +1,22 @@
 import React from 'react';
-import { Pencil, Trash} from 'react-bootstrap-icons'
+import StudentRender from './StudentRender';
+import { SpaceTd } from './Styled';
+import './Student.css'
+
 
 const Student = ({ formData, students, visibleRef, showCreate, hideCreate, onChange, onCreate, onUpdate, onDelete }) => {
+
+  
   return (
     <div className='student'>
       <div className='student-header'>Student</div>
       <div className='student-body'>
-        <div>
-          Studnets List <span><button onClick={showCreate}>add new student</button></span>
+        <div className='student-body-title'>
+          Students List <span><button onClick={showCreate}>add new student</button></span>
         </div>
-        <div>
+        <div className='student-body-content'>
           <form onSubmit={onCreate} onReset={hideCreate} autoComplete='off'>
-            <table>
+            <table className='student-tbl'>
               <thead>
                 <tr>
                   <th>name</th>
@@ -29,22 +34,13 @@ const Student = ({ formData, students, visibleRef, showCreate, hideCreate, onCha
                     <input type="reset" value='취소' />
                   </td>
                 </tr>
+                <tr>
+                  <SpaceTd></SpaceTd>
+                </tr>
                 {
-                  students.map(student => {
-                    return (
-                      <tr key={student.id}>
-                        <td>{student.name}</td>
-                        <td>{student.email}</td>
-                        <td>{student.phone}</td>
-                        <td>
-                          <button type='button' onClick={onUpdate}><Pencil/></button>
-                          <button type='button' onClick={() => onDelete(student.id)}><Trash/></button>
-                        </td>
-                      </tr>
-                    )
-                  })
+                  <StudentRender  students={students} onUpdate={onUpdate} onDelete={onDelete}></StudentRender>
                 }
-              </tbody>
+                </tbody>
             </table>
           </form>
         </div>
