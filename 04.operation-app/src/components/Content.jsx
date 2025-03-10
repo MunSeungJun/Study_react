@@ -1,23 +1,28 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 import Home from './Home';
 import Student from './Student';
 
 const Content = () => {
-  const [students, setStudents] = useState([
-    {
-      id: '1',
-      name: 'gildong',
-      email: 'gildong@gamil.com',
-      phone: '010-1234-5678',
-    },
-  ]);
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await axios.get('http://localhost:3000/students');
+        setStudents(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getData();
+  }, []);
+  const [students, setStudents] = useState([]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
   });
-  const [id, setId] = useState(2);
+  const [id, setId] = useState(1);
 
   const visibleRef = useRef();
 
@@ -46,6 +51,19 @@ const Content = () => {
         { id: id, name: formData.name, email: formData.email, phone: formData.phone },
       ];
     });
+    axios
+      .post('http://localhost:3000/students', {
+        id: `${id}`,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     setId(i => i + 1);
     setFormData({
       name: '',
@@ -54,15 +72,19 @@ const Content = () => {
     });
     visibleRef.current.classList.add('d-none');
   }
-  function onUpdate() {
-
-  }
+  function onUpdate() {}
   function onDelete(i) {
     setStudents(prev => {
-      return (
-        prev.filter(v => v.id !== i)
-      )
-    })
+      return prev.filter(v => v.id !== i);
+    });
+    axios
+      .delete(`http://localhost:3000/students/${i}`)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
   return (
     <Routes>
