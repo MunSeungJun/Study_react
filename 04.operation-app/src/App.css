@@ -7,3 +7,6 @@ ul, li{
 .d-none{
     display: none;
 }
+table, th, td{
+    border-collapse: collapse
+}
