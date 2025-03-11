@@ -1,0 +1,47 @@
+:root{
+    --primary-text-color: rgb(251,191,36);
+    --secondary-text-color: rgb(104,104,113)
+}
+
+#header{
+    background-color: black;
+    
+}
+.header-container{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    gap: 2rem;
+
+}
+#title{
+    color: var(--primary-text-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+#nav{
+    display: flex;
+    gap: 1rem;
+}
+
+#nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.75rem;
+}
+#main{
+    background-color: rgb(24,24,27);
+}
+.main-container{
+    width: 50%;
+    margin: 0 auto;
+}
+.ad{
+    width: 100%;
+    padding-top: 1rem;
+}
+.ad img{
+    width: 100%;
+}
