@@ -1,0 +1,29 @@
+.graph{
+    margin-top: 1rem;
+    border: 1px solid rgb(104,104,113);
+}
+.graph img{
+    width: 100%;
+}
+.thead{
+    padding: 0.5rem;
+    border-bottom: 1px solid #666;
+}
+.thead ul{
+    display: flex;
+    justify-content: space-between;
+}
+.thead ul li{
+    color: var(--secondary-text-color);
+    font-size: 0.75rem;
+}
+.tbody ul{
+    display: flex;
+    flex-direction: column;
+}
+.tbody ul li{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
