@@ -1,0 +1,28 @@
+.headline-item{
+    display: flex;
+    gap: 1rem;
+    padding: .25rem;
+    border-bottom: 1px solid #666;
+    margin-bottom: .5rem;
+}
+.headline-item:first-child{
+    border-top: 1px solid #666;
+}
+.hadline-item-img img{
+    width: 130px;
+    height: 73px;
+}
+
+.headline-item-body p{
+    margin: 0;
+}
+.headline-item-body-title{
+    color: white;
+    font-size: 0.625rem;
+    margin-bottom: .5rem !important;
+
+}
+.headline-item-body-description{
+    color: var(--secondary-text-color);
+    font-size: 0.5rem;
+}
