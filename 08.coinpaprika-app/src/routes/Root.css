@@ -4,6 +4,8 @@
 }
 
 #header{
+    position: fixed;
+    width: 100%;
     background-color: black;
     
 }
@@ -33,6 +35,7 @@
 }
 #main{
     background-color: rgb(24,24,27);
+    padding-top: 64px;
 }
 .main-container{
     width: 50%;
@@ -44,4 +47,14 @@
 }
 .ad img{
     width: 100%;
+}
+
+#aside{
+    position: fixed;
+    top: 15.5%;
+    left: calc(100%-90)%;
+}
+#aside img{
+    width: 200px;
+    height: 300px;
 }

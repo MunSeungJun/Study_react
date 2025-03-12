@@ -9,10 +9,10 @@ const Root = () => {
         <div className="header-container">
           <div id="title">CoinPaprika</div>
           <nav id="nav">
-            <Link to="home">홈</Link>
+            <Link to="/home">홈</Link>
             <Link>통계/지표</Link>
             <Link>시황/분석</Link>
-            <Link>뉴스</Link>
+            <Link to='/news/flash'>뉴스</Link>
             <Link>내정보</Link>
           </nav>
         </div>
@@ -24,6 +24,9 @@ const Root = () => {
             </div>
             <Outlet />
           </div>
+        <div id='aside'>
+          <img src="http://localhost:5173/img/side-ad-img.png" alt="" />
+        </div>
         </div>
     </>
   );
