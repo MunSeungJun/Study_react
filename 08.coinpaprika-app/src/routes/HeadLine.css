@@ -1,7 +1,7 @@
 .headline-item{
     display: flex;
     gap: 1rem;
-    padding: .25rem;
+    padding: .75rem;
     border-bottom: 1px solid #666;
     margin-bottom: .5rem;
 }
@@ -13,16 +13,18 @@
     height: 73px;
 }
 
-.headline-item-body p{
-    margin: 0;
+.headline-item-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .headline-item-body-title{
     color: white;
-    font-size: 0.625rem;
+    font-size: 1rem;
     margin-bottom: .5rem !important;
 
 }
 .headline-item-body-description{
     color: var(--secondary-text-color);
-    font-size: 0.5rem;
+    font-size: 0.75rem;
 }
