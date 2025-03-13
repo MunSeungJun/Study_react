@@ -14,7 +14,7 @@ const Headline = () => {
     <ul className="headline-list">
       {headlines.map(headline => (
         <li key={headline.article_id} className="headline-item">
-          <div className="hadline-item-img">
+          <div className="headline-item-img">
             <img src={headline.image_url} alt="" />
           </div>
           <div className="headline-item-body">

@@ -8,7 +8,7 @@
 .headline-item:first-child{
     border-top: 1px solid #666;
 }
-.hadline-item-img img{
+.headline-item-img img{
     width: 130px;
     height: 73px;
 }
