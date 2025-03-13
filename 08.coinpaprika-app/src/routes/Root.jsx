@@ -20,7 +20,7 @@ const Root = () => {
             <Link to="/home">홈</Link>
             <Link>통계/지표</Link>
             <Link>시황/분석</Link>
-            <Link to="/news/flash">뉴스</Link>
+            <Link to="/news/headline">뉴스</Link>
             <Link>내정보</Link>
           </nav>
         </div>

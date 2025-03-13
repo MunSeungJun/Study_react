@@ -5,7 +5,7 @@ import Root from './routes/Root'
 import Home, {Loader as HomeLoader} from './routes/Home'
 import News from './routes/News'
 import HeadLine, {Loader as HeadLineLoader} from './routes/Headline'
-import { Flash } from './routes/Flash'
+import Flash, {Loader as FlashLoader}  from './routes/Flash'
 import ErrorPage from './ErrorPage'
 import './index.css'
 
@@ -28,12 +28,13 @@ const router = createBrowserRouter([
           {
             path:'headline',
             element:<HeadLine/>,
+            index: true,
             loader: HeadLineLoader
         },
         {
           path:'flash',
           element:<Flash/>,
-          index: true
+          loader: FlashLoader
         }
       ]
       }
