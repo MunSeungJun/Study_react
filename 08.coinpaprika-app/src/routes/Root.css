@@ -7,10 +7,12 @@
     position: fixed;
     width: 100%;
     background-color: black;
+    z-index: 9999;
     
 }
 .header-container{
-    width: 50%;
+    width: 95%;
+    max-width: 950px;
     margin: 0 auto;
     display: flex;
     padding: 1rem;
@@ -21,7 +23,7 @@
 #title{
     color: var(--primary-text-color);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 #nav{
     display: flex;
@@ -31,30 +33,73 @@
 #nav a{
     text-decoration: none;
     color: white;
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 #main{
     background-color: rgb(24,24,27);
-    padding-top: 64px;
+    overflow-x: hidden;
+    padding-top: 80px;
 }
 .main-container{
-    width: 50%;
+    position: relative;
+    max-width: 950px;
+    width: 95%;
     margin: 0 auto;
 }
 .ad{
     width: 100%;
     padding-top: 1rem;
+    margin-bottom: 1rem;
 }
 .ad img{
     width: 100%;
 }
-
-#aside{
-    position: fixed;
-    top: 15.5%;
-    left: calc(100%-90)%;
+#aside-left-wrap{
+    position: absolute;
+    top: 0;
+    right: 100%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
-#aside img{
-    width: 200px;
-    height: 300px;
+
+
+#aside-right-wrap{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#aside-left img{
+    width: 300px;
+    height: 400px;
+}
+#aside-right img{
+    width: 300px;
+    height: 600px;
+}
+
+#btn{
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .header-container{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: .5rem;
+    }
+    #main{
+        padding-top: 100px !important;
+    }
+    #aside-right-wrap{
+        display: none;
+    }
+    #aside-left-wrap{
+        display: none;
+    }
 }
