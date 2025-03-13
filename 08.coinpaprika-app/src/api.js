@@ -31,11 +31,21 @@ export async function getHeadLine() {
   }
 }
 
+export async function getFlash() {
+  try {
+    const response = await axios(
+      'https://newsdata.io/api/1/latest?apikey=pub_7003575f4e6d07e8068f6002d1976b40d6cf3&q=coin'
+    );
+    return response.data.results;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 export function addComma(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 export function changeText(text) {
-    return text.toString().replace(/^(.{150}).+$/, "$1...")
+  return text.toString().replace(/^(.{150}).+$/, '$1...');
 }
-
