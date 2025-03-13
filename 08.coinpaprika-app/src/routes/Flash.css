@@ -1,3 +1,30 @@
-div{
+.flash-item{
+    display: flex;
+    gap: 1rem;
+    padding: .75rem;
+    border-bottom: 1px solid #666;
+    margin-bottom: .5rem;
+}
+.flash-item:first-child{
+    border-top: 1px solid #666;
+}
+.flash-item-img img{
+    width: 130px;
+    height: 73px;
+}
+
+.flash-item-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.flash-item-body-title{
     color: white;
+    font-size: 1rem;
+    margin-bottom: .5rem !important;
+
+}
+.flash-item-body-description{
+    color: var(--secondary-text-color);
+    font-size: 0.75rem;
 }
