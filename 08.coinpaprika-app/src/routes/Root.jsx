@@ -1,27 +1,30 @@
 import React, { useRef } from 'react';
 import { Outlet, NavLink, Link } from 'react-router-dom';
+import { tabChange} from '../api'
 import './Root.css';
 
 
 
 const Root = () => {
+  const linkRef = useRef([]);
   const scrollRef = useRef([]);
   window.addEventListener('scroll', () => {
     let scrollY = window.scrollY
-    scrollRef.current[0].style.top = `${scrollY}px`
-    scrollRef.current[1].style.top = `${scrollY}px`
+    scrollRef.current.forEach(v => v.style.top = `${scrollY}px`) 
   })
+
+ 
   return (
     <>
       <div id="header">
         <div className="header-container">
           <div id="title">CoinPaprika</div>
           <nav id="nav">
-            <Link to="/home">홈</Link>
-            <Link>통계/지표</Link>
-            <Link>시황/분석</Link>
-            <Link to="/news/headline">뉴스</Link>
-            <Link>내정보</Link>
+            <Link onClick={e => tabChange(e, linkRef)} name='home' ref={el => linkRef.current[0] = el} className='active' to="/home">홈</Link>
+            <Link ref={el => linkRef.current[1] = el}>통계/지표</Link>
+            <Link ref={el => linkRef.current[2] = el}>시황/분석</Link>
+            <Link onClick={e => tabChange(e, linkRef)} name='news' ref={el => linkRef.current[3] = el} to="/news/headline">뉴스</Link>
+            <Link ref={el => linkRef.current[4] = el}>내정보</Link>
           </nav>
         </div>
       </div>

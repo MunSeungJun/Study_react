@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+
+export function tabChange(e, linkRef) {
+  linkRef.current.forEach(v => v.classList.remove('active'))
+  linkRef.current.find(v => v.name == e.target.name).classList.add('active')
+}
+
+
 export async function getCoin() {
   try {
     const response = await axios.get('https://api.coinpaprika.com/v1/tickers');
