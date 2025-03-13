@@ -12,7 +12,7 @@ export async function getCoin() {
 export async function getExRate() {
   try {
     const response = await axios.get(
-      'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=l5z31lZyXfhjW8Bugj7l3zR0DPQmRDO0&searchdate=20250312&data=AP01'
+      'https://m.search.naver.com/p/csearch/content/qapirender.nhn?key=calculator&pkid=141&q=%ED%99%98%EC%9C%A8&where=m&u1=keb&u6=standardUnit&u7=0&u3=USD&u4=KRW&u8=down&u2=1'
     );
     return response.data;
   } catch (err) {
@@ -36,5 +36,6 @@ export function addComma(num) {
 }
 
 export function changeText(text) {
-    return text.toString().replace(/^(.{30}).+$/, "$1...")
+    return text.toString().replace(/^(.{150}).+$/, "$1...")
 }
+

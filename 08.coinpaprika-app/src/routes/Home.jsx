@@ -10,7 +10,7 @@ export async function Loader() {
 
 const Home = () => {
   const { coins, exRates } = useLoaderData();
-  const exRate = parseInt(exRates[22].deal_bas_r.replace(/,/g, ''));
+  const exRate = parseInt(exRates.country[1].value.replace(/,/g, ''));
   return (
     <>
       <div className="graph">
