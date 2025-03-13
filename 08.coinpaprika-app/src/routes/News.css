@@ -2,12 +2,10 @@
     padding: 0.5rem;
     text-decoration: none;
     color: var(--secondary-text-color);
-    font-size: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
-.active{
-    color: white !important;
-    border-bottom: 2px solid var(--primary-text-color);
-}
+
 .news-body{
     margin-top: 1rem;
 }
