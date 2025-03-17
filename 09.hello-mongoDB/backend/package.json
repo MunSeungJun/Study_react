@@ -12,6 +12,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "09.hello-mongodb": "file:..",
+    "cors": "^2.8.5",
     "express": "^4.21.2"
   },
   "devDependencies": {
