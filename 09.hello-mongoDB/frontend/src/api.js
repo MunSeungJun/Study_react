@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function getData() {
   try {
-    const response = await axios.get('http://localhost:3000');
+    const response = await axios.get('http://localhost:3000/list');
     return response.data;
   } catch (err) {
     console.log(err);
@@ -11,10 +11,15 @@ export async function getData() {
 
 export async function createData(data) {
   axios
-    .post('http://localhost:3000/movie', {
-      title: data.get('title'),
-      body: data.get('body'),
-      poster: data.get('poster'),
+    .post('http://localhost:3000/add', {
+      employee_id: data.get('employee_id'),
+      last_name: data.get('last_name'),
+      first_name: data.get('first_name'),
+      email: data.get('email'),
+      phone_number: data.get('phone_number'),
+      salary: data.get('salary'),
+      commission_pct: data.get('commission_pct'),
+      manager_id: data.get('manager_id'),
     })
     .then(function (response) {
       console.log(response);
