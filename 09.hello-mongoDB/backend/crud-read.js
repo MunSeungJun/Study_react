@@ -6,8 +6,8 @@ const client = new MongoClient(uri);
 export async function readUsers() {
   try {
     await client.connect();
-    const db = client.db("sample_mflix");
-    const coll = db.collection("movies");
+    const db = client.db("hr");
+    const coll = db.collection("employees");
     const cursor = coll.find();
     const users = await cursor.toArray();
     return users;
