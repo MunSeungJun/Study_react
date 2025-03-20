@@ -12,7 +12,7 @@ export async function getData() {
 export async function createData(data) {
   axios
     .post('http://localhost:3000/add', {
-      employee_id: data.get('employee_id'),
+      employee_id: (data.get('employee_id')),
       last_name: data.get('last_name'),
       first_name: data.get('first_name'),
       email: data.get('email'),
@@ -21,6 +21,17 @@ export async function createData(data) {
       commission_pct: data.get('commission_pct'),
       manager_id: data.get('manager_id'),
     })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+export async function deleteData(id) {
+  axios
+    .delete(`http://localhost:3000/delete/${id}`)
     .then(function (response) {
       console.log(response);
     })
