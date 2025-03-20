@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { Form, redirect } from 'react-router-dom';
 import { createData } from '../api';
 
@@ -11,7 +11,6 @@ export async function Action({ request }) {
 
 const Add = () => {
   return (
-    <Container>
       <Row>
         <Col>
           <h1 className='text-center py-3'>사원등록</h1>
@@ -56,7 +55,6 @@ const Add = () => {
           </Form>
         </Col>
       </Row>
-    </Container>
   );
 };
 
