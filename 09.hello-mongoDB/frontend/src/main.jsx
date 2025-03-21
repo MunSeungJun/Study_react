@@ -7,6 +7,7 @@ import App from './routes/App.jsx';
 import ErrorPage from './error-page.jsx';
 import List, { Loader as ListLoader } from './routes/List.jsx';
 import Add, { Action as AddAction } from './routes/Add.jsx';
+import Update, { Loader as UpdateLoader, Action as UpdateAction} from './routes/Update.jsx'
 import { Action as DeleteAction } from './routes/destroy.jsx'
 import Home from './routes/Home.jsx';
 
@@ -31,7 +32,13 @@ const router = createBrowserRouter([
         action: AddAction,
       },
       {
-        path:'/list/:id',
+        path:'/list/:id/update',
+        element:<Update/>,
+        loader:UpdateLoader,
+        action:UpdateAction
+      },
+      {
+        path:'/list/:id/delete',
         action: DeleteAction
       }
     ],
