@@ -15,3 +15,18 @@ export async function readUsers() {
     console.log(e);
   }
 }
+
+export async function readSelectUsers(id) {
+  try {
+    await client.connect();
+    const db = client.db("hr");
+    const coll = db.collection("employees");
+    const cursor = coll.find(id);
+    const users = await cursor.toArray();
+    return users;
+
+  } catch (e) {
+    console.log(e)
+  }
+  
+}
