@@ -3,5 +3,5 @@ import { deleteData } from '../api'
 
 export async function Action({params}) {
     await deleteData(params.id)
-    return redirect('/list')
+    return redirect('/')
 }
