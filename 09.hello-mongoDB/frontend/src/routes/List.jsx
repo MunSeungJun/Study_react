@@ -7,17 +7,13 @@ export async function Loader() {
   return JSON.stringify(await getData());
 }
 
-// function onDelete(e) {
-//   deleteData(e.target.dataset.id)
-// }
-
 const List = () => {
   const data = JSON.parse(useLoaderData());
   return (
     <>
       <Row>
         <Col>
-          <h1 className="text-center fs-2 mb-3">사원</h1>
+          <h1 className="text-center fs-2 mb-3">사원목록</h1>
           <Table striped bordered hover size="sm">
             <thead>
               <tr className="text-center">
@@ -33,8 +29,8 @@ const List = () => {
             </thead>
             <tbody>
               {data.map((v, i) => (
-                <tr key={i}>
-                  <td className="text-end">{v.employee_id}</td>
+                <tr key={i} className='align-middle'>
+                  <td className="text-end ">{v.employee_id}</td>
                   <td>
                     {v.first_name} {v.last_name}
                   </td>
@@ -43,9 +39,16 @@ const List = () => {
                   <td className="text-end">{v.salary}</td>
                   <td className="text-end">{v.commission_pct ? v.commission_pct : '-'}</td>
                   <td className="text-end">{v.manger_id ? v.manger_id : '-'}</td>
-                  <td>
-                    <Form method="delete" action={v.employee_id}>
-                      <button className="btn">삭제</button>
+                  <td className='d-flex gap-2 justify-content-center p-1'>
+                    <Form action={`${v.employee_id}/update`}>
+                      <button className='btn bg-primary-subtle'>수정</button>
+                    </Form>
+                    <Form method="delete" action={`${v.employee_id}/delete`} onSubmit={(e) => {
+                      if ( !confirm('삭제하시겠습니까')) {
+                        e.preventDefault()
+                      }
+                    }}>
+                      <button className="btn bg-danger-subtle">삭제</button>
                     </Form>
                   </td>
                 </tr>
