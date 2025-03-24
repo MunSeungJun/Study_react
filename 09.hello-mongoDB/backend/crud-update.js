@@ -4,8 +4,6 @@ const uri = "mongodb+srv://demouser:demo1234@cluster0.jzdiw.mongodb.net/";
 const client = new MongoClient(uri);
 
 export async function updateUsers(id, data) {
-    console.log(id)
-    console.log(data)
   try {
     await client.connect();
     const db = client.db("hr");
