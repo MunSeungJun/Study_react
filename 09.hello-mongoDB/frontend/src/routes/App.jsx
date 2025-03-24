@@ -30,7 +30,9 @@ const App = () => {
           <Outlet />
         </Container>
       </main>
-      <footer></footer>
+      <footer className='border-top'>
+        <p className='my-4 text-center'>&copy; hanul 2025.03.24</p>
+      </footer>
     </>
   );
 };
