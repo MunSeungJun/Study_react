@@ -9,8 +9,11 @@ const Home = () => {
       <p>WP ERP optimizes your small to medium businesses with a powerful HR Manager,</p>
       <p>CRM and Accounting tools - Unlock more with 20+ extension & Project</p>
       <p>Managemnet module</p>
-      <button className="btn">Get Started</button>
-      <button className="btn">Demo</button>
+      <div>
+        <button className="btn">Get Started</button>
+        <button className="btn">Demo</button>
+      </div>
+      <img src="http://localhost:5173/landing-img.png" className='w-100' alt="" />
     </div>
   );
 };
