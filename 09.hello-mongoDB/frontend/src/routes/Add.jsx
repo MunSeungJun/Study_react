@@ -6,7 +6,7 @@ import { createData } from '../api';
 export async function Action({ request }) {
   const data = await request.formData();
   createData(data)
-  return redirect('/')
+  return redirect('/list')
 }
 
 const Add = () => {
